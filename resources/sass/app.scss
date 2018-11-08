@@ -1,0 +1,244 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import "laravel-mentions.scss";
+
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+.h7 {
+    font-size: 0.8rem;
+}
+
+.gedf-wrapper {
+    margin-top: 0.97rem;
+}
+
+@media (min-width: 992px) {
+    .gedf-main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .gedf-card {
+        margin-bottom: 2.77rem;
+    }
+}
+
+/**Reset Bootstrap*/
+.dropdown-toggle::after {
+    content: none;
+    display: none;
+}
+
+#textarea {
+    -moz-appearance: textfield-multiline;
+    -webkit-appearance: textarea;
+    font: medium -moz-fixed;
+    font: -webkit-small-control;
+    height: 100px;
+    overflow: auto;
+    padding: 2px;
+    resize: both;
+    width: 100%;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+  }
+
+
+  /*not necessary*/
+@import url('https://fonts.googleapis.com/css?family=Nunito:100,300,400,600,700');
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+body{font-family:Nunito,arial,sans-serif;}
+.section{float:left;width:100%;background: #fff;padding:30px 0;}
+.promote{border:1px dashed #ddd;display:flex; height:100%;justify-content: center;flex-direction: column;align-items: stretch;}
+.col-md-4{padding:15px;}
+
+/*not necessary*/
+
+
+.profile-card-2 .card-img-block{
+    float:left;
+    width:100%;
+    height:150px;
+    overflow:hidden;
+}
+.profile-card-2 .card-body{
+    position:relative;
+}
+.profile-card-2 .profile {
+  border-radius: 50%;
+  position: absolute;
+  top: -42px;
+  left: 15%;
+  max-width: 75px;
+  border: 3px solid rgba(255, 255, 255, 1);
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+.profile-card-2 h5{
+    font-weight:600;
+    color:#007bff;
+}
+.profile-card-2 .card-text{
+    font-weight:300;
+    font-size:15px;
+}
+.profile-card-2 .icon-block{
+    float:left;
+    width:100%;
+}
+.profile-card-2 .icon-block a{
+    text-decoration:none;
+}
+.profile-card-2 i {
+  display: inline-block;
+    font-size: 16px;
+    color: #007bff;
+    text-align: center;
+    border: 1px solid #007bff;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    margin:0 5px;
+}
+.profile-card-2 i:hover {
+  background-color:#007bff;
+  color:#fff;
+}
+
+.hide {
+    display: none;
+}
+
+.mention-node {
+    color: #007bff;
+    font-weight: 600;
+}
+
+
+
+.dropdown-item.dropdown-notification:active, .dropdown-item.dropdown-notification.active {
+    color: #1d1e1f;
+    text-decoration: none;
+    background-color: #f7f7f9;
+  }
+
+  .dropdown-notification:hover .notification-read {
+    color: #34495E;
+  }
+
+  .dropdown-notification-all {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-style: oblique;
+    background-color: #34495E;
+    color: white;
+  }
+
+  .dropdown-notification-all:hover {
+    background-color: #34495E;
+    color: white;
+  }
+
+  .notifications-container {
+    max-height: 300px;
+    overflow: auto;
+  }
+
+  .notification-dropdown-menu {
+    padding-bottom: 0;
+    min-width: 528px;
+  }
+
+  .notification-img {
+    width: 48px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .notifications-body {
+    display: inline-block;
+  }
+
+  .notification-texte {
+    text-align: left;
+    margin: 0;
+  }
+
+  .notification-read {
+    margin: 0;
+    height: 48px;
+    vertical-align: top;
+    line-height: 48px;
+    padding-left: 15px;
+    color: white;
+    float: right;
+  }
+
+  .notification-date {
+    text-align: left;
+    color: #2980b9;
+    margin: 0;
+  }
+
+  .notification-solo {
+    margin-top: 1rem;
+  }
+
+  .notification-unread {
+    text-decoration: none;
+    background-color: #f7f7f9;
+  }
