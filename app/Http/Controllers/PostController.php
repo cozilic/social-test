@@ -68,38 +68,7 @@ class PostController extends Controller
 
                 $post->save();
 
-//            $post->user->mention($request->mentions);
         return redirect()->back();
-
-
-//            return $comment;
-
-//        if ($request->image == null) {
-//            Post::create([
-//                'user_id' => Auth::user()->id,
-//                'body' => $request->text,
-//                'visibility' => $request->visibility,
-//                ]);
-//            }else{
-//                $file = $request->image;
-//                $file->move('uploads/'. Auth::user()->id.'/', $file->getClientOriginalName());
-//                $file = $file->getClientOriginalName();
-//
-//                $post = new Post();
-//                $post->user_id = Auth::user()->id;
-//                $post->body = $request->text;
-//                $post->visibility = $request->visibility;
-//                $post->image = $file;
-//                $post->save();
-
-
-//                Post::create([
-//                    'user_id' => Auth::user()->id,
-//                    'image' => $file,
-//                    'visibility' => $request->visibility,
-//                ]);
-//            }
-//            return redirect()->back();
     }
 
 
