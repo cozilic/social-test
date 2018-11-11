@@ -1,5 +1,5 @@
 <?php
-//Auth::loginUsingId(2);
+Auth::loginUsingId(2);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +25,4 @@ Route::get('/post/{post}', 'PostController@show')->name('show.post');
 Route::get('/mentions/{user}', 'UserController@clearmentions')->name('clear.mentions');
 Route::get('/post/{post}/like', 'PostController@like')->name('like.post');
 Route::get('/post/{post}/unlike', 'PostController@unlike')->name('unlike.post');
+Route::get('/tags/{tag}', 'TagsController@show')->name('search.tags');

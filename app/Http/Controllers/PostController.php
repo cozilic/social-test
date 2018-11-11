@@ -63,7 +63,7 @@ class PostController extends Controller
                 $post->image = $file;
             }
 
-            $hash = Post::parseHash($request->body);
+            $hash = Post::parseHashtags($request->body);
             $post->tags = $hash;
 
                 $post->save();

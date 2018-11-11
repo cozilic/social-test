@@ -1,4 +1,4 @@
-@foreach (App\Post::getpost() as $post)
+@foreach ($tags ?? App\Post::getpost() as $post)
 <div class="card gedf-card shadow">
     <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
@@ -45,5 +45,5 @@
         </div>
     </div>
     @endforeach
-    {{App\Post::getpost()->links()}}
+    {{--  {{App\Post::getpost()->links()}}  --}}
 </div>
