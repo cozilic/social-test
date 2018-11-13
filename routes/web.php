@@ -26,3 +26,5 @@ Route::get('/mentions/{user}', 'UserController@clearmentions')->name('clear.ment
 Route::get('/post/{post}/like', 'PostController@like')->name('like.post');
 Route::get('/post/{post}/unlike', 'PostController@unlike')->name('unlike.post');
 Route::get('/home/?tag={tag}', 'TagsController@show')->name('get.tags');
+Route::get('/home/?tag={tags}', 'TagsController@show')->name('search.tag');
+

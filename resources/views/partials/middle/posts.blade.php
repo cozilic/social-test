@@ -1,5 +1,19 @@
-
-@foreach (App\Post::getpost() as $post)
+@if (App\Post::getpost()->count() == 0)
+<div class="card gedf-card shadow">
+            <div class="card-body">
+                <div class="text-muted h7 mb-2">Tag not found.</div>
+                <p class="card-text">
+                    <h3>Not found!</h3>
+                    The tag: <strong>#{{Request()->query('tag')}}</strong> was not found in our system.<br />Check that the spelling was correct and try again.
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href="/home">Go to home</a>
+                {{--  @include('partials.middle.postfooter')  --}}
+            </div>
+        </div>
+@endif
+@foreach (App\Post::getpost() ?? '' as $post)
 <div class="card gedf-card shadow">
     <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">

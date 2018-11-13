@@ -68,7 +68,7 @@ class PostController extends Controller
             // $post->tags = $hash;
 
 
-        return redirect()->back();
+        return redirect('home');
     }
 
 
