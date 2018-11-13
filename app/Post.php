@@ -42,7 +42,7 @@ static function getTopTags()
         if (Request()->query('tag') !== null) {
             $tagName = Request()->query('tag');
             $posts = Post::whereHas('tag', function ($q) use($tagName) {
-                $q->where('tag', $tagName);
+                $q->where('tag','LIKE','%'. $tagName.'%');
             })->get();
             $posts = $posts->sortByDesc('created_at');
             return $posts;

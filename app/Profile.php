@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Profile extends Model
 {
@@ -13,5 +14,11 @@ class Profile extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    static function getSocial()
+    {
+        $profile = Auth::user()->profile;
+        return $profile;
     }
 }

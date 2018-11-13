@@ -1,12 +1,24 @@
-@if (App\Post::getpost()->count() == 0)
-<div class="card gedf-card shadow">
+@if (!App\Post::getpost()->count())
+<div class="card shadow">
             <div class="card-body">
-                <div class="text-muted h7 mb-2">Tag not found.</div>
+                @if (!Request()->query('tag'))
+                <div class="text-muted h7 mb-2">No Posts.</div>
                 <p class="card-text">
-                    <h3>Not found!</h3>
-                    The tag: <strong>#{{Request()->query('tag')}}</strong> was not found in our system.<br />Check that the spelling was correct and try again.
+                    <h3>Nothing found!</h3>
+                    No post was found in the system.. maybe you could be the first!!.
                 </p>
             </div>
+
+                    @else
+                    <div class="text-muted h7 mb-2">Tag not found.</div>
+                    <p class="card-text">
+                        <h3>Not found!</h3>
+                        The tag: <strong>#{{Request()->query('tag')}}</strong> was not found in our system.<br />Check that the spelling was correct and try again.
+                    </p>
+                </div>
+
+                @endif
+
             <div class="card-footer">
                 <a href="/home">Go to home</a>
                 {{--  @include('partials.middle.postfooter')  --}}
@@ -59,6 +71,7 @@
             @include('partials.middle.postfooter')
         </div>
     </div>
+    {{--  @include('partials.replies.show')  --}}
     @endforeach
     {{--  {{App\Post::getpost()->links()}}  --}}
 </div>

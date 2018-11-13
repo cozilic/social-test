@@ -1,20 +1,15 @@
 <a class="dropdown-item" href="{{route('clear.mentions',Auth::user()->id)}}"><i class="fas fa-trash"> </i> Clear Notifications</a>
-    <ul class="timeline" style="width: 100%;">
-            <li>
-                <a target="_blank" href="https://www.totoprayogo.com/#">New Web Design</a>
-                <a href="#" class="float-right">21 March, 2014</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
-            </li>
-    </ul>
-    <div class="dropdown-divider"></div>
-    <ul class="timeline">
-            <li>
-                <a target="_blank" href="https://www.totoprayogo.com/#">New Web Design</a>
-                <a href="#" class="float-right">21 March, 2014</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
-            </li>
-    </ul>
-    <div class="dropdown-divider"></div>
+<div class="list-group d-inline-flex">
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Notification!</h5>
+            <small>3 days ago</small>
+          </div>
+          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+          <small>Donec id elit non mi porta.</small>
+        </a>
+      </div>
+    {{--  <div class="dropdown-divider"></div>  --}}
 
     {{--
     <a class="dropdown-item" href="{{route('show.post',$mention->model_id)}}">
