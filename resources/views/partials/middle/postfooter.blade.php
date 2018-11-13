@@ -1,6 +1,6 @@
   <span style="text-align:left;">
-    @foreach (App\Post::unHash($post->tags) as $item)
-    <a href="{{route('search.tags', $item)}}" class="badge badge-primary">{{$item}}</a>
+    @foreach ($post->tag as $tags)
+    <a href="{{route('get.tags', $tags->tag)}}" class="badge badge-primary">{{$tags->tag}}</a>
     @endforeach
     <like post_id="{{$post->id}}" isliked="{{ $post->isLikedBy() }}" likes="{{$post->likesCount}}"></like>
         </small></span>

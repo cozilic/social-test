@@ -1,10 +1,11 @@
-@foreach ($tags ?? App\Post::getpost() as $post)
+
+@foreach (App\Post::getpost() as $post)
 <div class="card gedf-card shadow">
     <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="mr-2">
-                        <img class="rounded-circle" width="45" src="{{$post->user->profile->avatar}}" alt="">
+                        <img class="rounded-circle" width="45" src="{{$post->user->profile->avatar ?? '' }}" alt="">
                     </div>
                     <div class="ml-2">
                             <!-- Button trigger modal -->

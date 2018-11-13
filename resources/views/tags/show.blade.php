@@ -12,7 +12,7 @@
             <!-- Create new post end -->
 
             <!-- Display the posts -->
-            @include('partials.middle.posts', $tags)
+            @include('partials.middle.tags', $tags)
             <!-- Display the posts end -->
 
             <!-- Display widgets -->

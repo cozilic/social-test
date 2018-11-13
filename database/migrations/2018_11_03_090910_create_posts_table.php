@@ -19,7 +19,6 @@ class CreatePostsTable extends Migration
             $table->text('body')->nullable();
             $table->string('image')->nullable();
             $table->integer('likes')->default('0');
-            $table->string('tags')->nullable();
             $table->string('visibility');
             $table->timestamps();
         });
