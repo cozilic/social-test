@@ -62,11 +62,11 @@ class PostController extends Controller
                 $file = $file->getClientOriginalName();
                 $post->image = $file;
             }
+            $post->save();
+            $latestPost = Post::latest()->first();
+            $hash = Post::parseHashtags($request->body, $latestPost);
+            // $post->tags = $hash;
 
-            $hash = Post::parseHash($request->body);
-            $post->tags = $hash;
-
-                $post->save();
 
         return redirect()->back();
     }

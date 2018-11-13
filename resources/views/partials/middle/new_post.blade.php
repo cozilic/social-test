@@ -5,14 +5,13 @@
     <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">Make
-                    a publication</a>
+                <a class="nav-link active" id="posts-tab" data-toggle="tab" role="tab" aria-controls="posts" aria-selected="true">Whats on your mind&#063;</a>
             </li>
 {{--
             <li class="nav-item">
                 <a class="nav-link" id="images-tab" data-toggle="tab" role="tab" aria-controls="images" aria-selected="false" href="#images">Images</a>
-            </li>
---}}
+            </li>  --}}
+
         </ul>
     </div>
     <div class="card-body">
@@ -52,11 +51,12 @@
         </div>
         <div class="btn-toolbar justify-content-between">
             <div class="btn-group">
-                <button type="submit" class="btn btn-primary">share</button>
+                <button type="submit" class="btn btn-primary">Share</button>
             </div>
             <div class="btn-group">
                 <div class="btn btn-primary btn-file">
-                    Upload image <input name="image" type="file" onchange="readURL(this);">
+                    Add image
+                    <input name="image" type="file" onchange="readURL(this);">
                 </div>
             </div>
 
