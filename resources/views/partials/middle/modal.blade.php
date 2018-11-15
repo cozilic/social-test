@@ -26,7 +26,8 @@
                         </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success">Follow</button>
+                <button type="button" class="btn btn-success" onclick="location.href='{{ route('follow',$post->user) }}'">Follow</button>
+
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>

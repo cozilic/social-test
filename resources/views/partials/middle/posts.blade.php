@@ -38,6 +38,16 @@
                             @include('partials.middle.modal')
                             <div class="h5 m-0"><a data-toggle="modal" data-target="#modal-{{$post->user->id}}" href="#">{{'@' . $post->user->username}}</a></div>
                         <div class="h7 text-muted">{{$post->user->name}}</div>
+                        @if ($post->visibility == 'private')
+                            <span class="text-danger">Private</span> <i class="fas fa-lock" style="color: red"></i> <span class="text-muted"><small>(Only you see this)</small></span>
+                        @endif
+                        @if ($post->visibility == 'friends')
+                            <span class="text-primary">Friends</span> <i class="fas fa-users" style="color: #38A1F3"></i> <span class="text-muted"><small>(Only your friends see this)</small></span>
+                        @endif
+                        @if ($post->visibility == 'public')
+                            <span class="text-success">Public</span> <i class="fas fa-book-open" style="color: #5cb85c"></i> <span class="text-muted"><small>(Everyone can see this)</small></span>
+                        @endif
+
                     </div>
                 </div>
                 <div>
@@ -61,7 +71,7 @@
             <p class="card-text">
                 @if (!$post->image == null)
                 {!! $post->body !!}<hr><span class="text-muted"><small>attached image</small></span><br />
-                <img height="200" width="400" src="/uploads/{{$post->user->id}}/{{$post->image}}">
+                <img height="" width="" src="/uploads/{{$post->user->id}}/{{$post->image}}">
                 @else
                 {!! $post->body !!}
                 @endif

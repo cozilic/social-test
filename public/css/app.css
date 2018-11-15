@@ -10479,7 +10479,7 @@ a.text-dark:focus {
 }
 
 .tribute-container ul li {
-  padding: 1rem 2rem;
+  padding: 0rem 2rem;
   margin: 0;
   color: black;
   list-style-type: none;
@@ -10834,7 +10834,7 @@ ul.dropdown-menu > li {
   border-radius: 6px;
   display: inline-block !important;
   float: left;
-  margin: -30px 5px 0 8px;
+  margin: -20px 5px 0 8px;
   max-width: 100%;
   padding: 1px;
   vertical-align: bottom;
@@ -10851,7 +10851,7 @@ ul.dropdown-menu > li {
 }
 
 .twPc-divUser {
-  margin: 5px 0 0;
+  margin: 15px 0 0;
 }
 
 .twPc-divName {
@@ -10911,5 +10911,14 @@ ul.twPc-Arrange {
   text-transform: uppercase;
   -webkit-transition: color 0.15s ease-in-out 0s;
   transition: color 0.15s ease-in-out 0s;
+}
+
+.button_hide {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }
 

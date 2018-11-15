@@ -21,21 +21,24 @@
                                 <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="/friends">Friends</a>
+                                <a class="nav-link" href="/friends">Friends <span class="badge badge-primary">0</span></a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="/messages">Messages</a>
+                                <a class="nav-link" href="/messages">Messages <span class="badge badge-primary">0</span></a>
                               </li>
-
-                              <li class="nav-item dropdown">
-                                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Notifications <span class="badge badge-primary"></span>
+                              <li class="nav-item dropdown" style="max-width: 1200px;">
+                                      <a class="nav-link dropdown-toggle" href="#" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Notifications <span class="badge badge-primary">0</span> <i class="fas fa-caret-down"></i>
                                       </a>
 
                                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                                   @include('partials.data.notifications')
                                               </div>
                               </li>
+                              @if(Auth::user()->hasRole('admin'))
+                              @include('partials.admin.nav')
+                              @endif
+
                             </ul>
 
                 </ul>

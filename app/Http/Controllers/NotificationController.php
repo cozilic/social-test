@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Friend;
+use App\Notification;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Foundation\Auth\User;
 
-class FriendController extends Controller
+class NotificationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,26 +15,6 @@ class FriendController extends Controller
     public function index()
     {
         //
-    }
-
-    public function follow(User $user)
-    {
-        Auth::user()->following()->attach($user);
-        // Notify new follower
-        return back();
-
-    }
-
-    public function following()
-    {
-
-        return Auth::user()->following;
-        // return $friend;
-    }
-
-    public function followers()
-    {
-        return Auth::user()->followers;
     }
 
     /**
@@ -63,10 +41,10 @@ class FriendController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Friend  $friend
+     * @param  \App\Notification  $notification
      * @return \Illuminate\Http\Response
      */
-    public function show(Friend $friend)
+    public function show(Notification $notification)
     {
         //
     }
@@ -74,10 +52,10 @@ class FriendController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Friend  $friend
+     * @param  \App\Notification  $notification
      * @return \Illuminate\Http\Response
      */
-    public function edit(Friend $friend)
+    public function edit(Notification $notification)
     {
         //
     }
@@ -86,10 +64,10 @@ class FriendController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Friend  $friend
+     * @param  \App\Notification  $notification
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Friend $friend)
+    public function update(Request $request, Notification $notification)
     {
         //
     }
@@ -97,10 +75,10 @@ class FriendController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Friend  $friend
+     * @param  \App\Notification  $notification
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Friend $friend)
+    public function destroy(Notification $notification)
     {
         //
     }

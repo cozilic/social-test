@@ -50,6 +50,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+        //Make validation
+if ($request->image == null) {
+    $validatedData = $request->validate([
+        'body' => 'required',
+    ]);
+}
+
+        //Store the post
             $text = Post::parseText($request->body);
             $post = new Post();
             $post->user_id = Auth::user()->id;
@@ -63,8 +72,11 @@ class PostController extends Controller
                 $post->image = $file;
             }
             $post->save();
-            $latestPost = Post::latest()->first();
-            $hash = Post::parseHashtags($request->body, $latestPost);
+            $post->user->mention($request->mentions);
+            if (!$request->visibility == 'private') {
+                $latestPost = Post::latest()->first();
+                $hash = Post::parseHashtags($request->body, $latestPost);
+            }
             // $post->tags = $hash;
 
 

@@ -1,14 +1,11 @@
+@if (Auth::user()->notifications->isEmpty())
+<span class="dropdown-item text-muted">No Notifications</span>
+@else
 <a class="dropdown-item" href="{{route('clear.mentions',Auth::user()->id)}}"><i class="fas fa-trash"> </i> Clear Notifications</a>
-<div class="list-group d-inline-flex">
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Notification!</h5>
-            <small>3 days ago</small>
-          </div>
-          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          <small>Donec id elit non mi porta.</small>
-        </a>
-      </div>
+@foreach (Auth::user()->notifications as $key => $item)
+<a class="dropdown-item" href="#"><i class="fas fa-user"> </i> {{'@'.App\User::find($item->from_user_id)->username}} mentioned you in Post_id</a>
+@endforeach
+@endif
     {{--  <div class="dropdown-divider"></div>  --}}
 
     {{--

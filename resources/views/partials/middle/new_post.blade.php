@@ -31,19 +31,6 @@
             <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
                 <div class="form-group">
                     <div class="custom-file">
-{{--
-    <input type="file" name="image" class="custom-file-input" id="customFile">
-    <label class="custom-file-label" for="customFile">Upload image</label>
-    <div class="col-md-12 uploadfrm">
-        <p><span class="btn btn-primary btn-file">
-            Upload image <input name="image" type="file"  onchange="readURL(this);">
-        </span></p>
-    </div>
-    <div class="preview">
-        <img id="blah" width="300" height="300" src="" alt="" class="img-thumbnail border-0">
-    </div>
-    --}}
-
                     </div>
                 </div>
                 <div class="py-4"></div>
@@ -71,6 +58,16 @@
         </div>
     </div>
 </form>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <div class="preview">
         <center><img id="blah" width="300" height="300" src="" alt="" class="img-thumbnail border-0"></center>
     </div>

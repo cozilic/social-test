@@ -33,17 +33,21 @@ static function getTopTags()
     ->groupBy('tags.tag')
     ->get(['tags.tag', DB::raw('count(tags.tag) as tag_count')])
     ->sortByDesc('tag_count');
+    $tags->load('post');
         return $tags;
 
 }
     static function getpost()
     {
-
         if (Request()->query('tag') !== null) {
             $tagName = Request()->query('tag');
-            $posts = Post::whereHas('tag', function ($q) use($tagName) {
+            $posts = Post::where('visibility','=','public')->whereHas('tag', function ($q) use($tagName) {
                 $q->where('tag','LIKE','%'. $tagName.'%');
             })->get();
+            $private = Post::where('user_id', Auth::user()->id)->whereVisibility('private')->latest()->get();
+            foreach ($private as $key => $value) {
+                $posts->push($value);
+            }
             $posts = $posts->sortByDesc('created_at');
             return $posts;
             //dd($posts);
@@ -68,6 +72,10 @@ static function getTopTags()
             foreach ($private as $key => $value) {
                 $posts->push($value);
             }
+            $friends = Post::where('user_id', Auth::user()->id)->whereVisibility('friends')->latest()->get();
+            foreach ($friends as $key => $value) {
+                $posts->push($value);
+            }
             $posts = $posts->sortByDesc('created_at');
             //dd($posts);
             return $posts;
@@ -77,11 +85,8 @@ static function getTopTags()
     {
             $pat = array('/\#([a-zA-Z0-9\.\-\&]+)/', '/@(\w+)-./', '/(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})/');
             $rep = array('<font color="Orange"><strong>#$1</strong></font>', '<a href="/user/$1">@$1</a>','<a rel="external" target="_blank" href="$1">$1</a>');
-            // Notify users here
             $data = preg_replace($pat, $rep, $data);
             $data = nl2br($data);
-            //$data = str_replace(':','&#58',$data);
-            //dd($data);
             return $data;
     }
 

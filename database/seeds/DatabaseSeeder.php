@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\User;
+use App\Profile;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,22 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-        $user = factory(App\User::class)->create([
-            'name' => 'Patrik Forsberg',
-            'username' => 'cozilic',
-            'email' => 'aggen81@gmail.com',
-        ]);
-        $user->profile()->save(new App\Profile([
-            'facebook_username' => 'cozilic',
-            'twitter_username' => 'cozilic',
-            'google_username' => '107975657537653133900',
-        ]));
+        $this->call(RoleTableSeeder::class);
+        $this->call(UserTableSeeder::class);
 
-        factory(App\User::class, 50)->create()->each(function ($u) {
-            $u->profile()->save(factory(App\Profile::class)->make());
+        factory(User::class, 50)->create()->each(function ($u) {
+            $u->profile()->save(factory(Profile::class)->make());
         });
-        //factory(App\Post::class, 10)->create();
+        factory(\App\Post::class, 10)->create();
 
     }
 }

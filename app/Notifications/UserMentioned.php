@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use App\Notification as Notif;
 
 class UserMentioned extends Notification
 {
@@ -29,7 +30,10 @@ class UserMentioned extends Notification
      */
     public function via($notifiable)
     {
-        return ['array'];
+        Notif::addNotif($notifiable,'mention');
+        return [
+
+        ];
     }
 
     /**
@@ -55,7 +59,6 @@ class UserMentioned extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
         ];
     }
 }

@@ -1,5 +1,5 @@
 <?php
-//Auth::loginUsingId(2);
+Auth::loginUsingId(1);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,4 +27,8 @@ Route::get('/post/{post}/like', 'PostController@like')->name('like.post');
 Route::get('/post/{post}/unlike', 'PostController@unlike')->name('unlike.post');
 Route::get('/home/?tag={tag}', 'TagsController@show')->name('get.tags');
 Route::get('/home/?tag={tags}', 'TagsController@show')->name('search.tag');
+Route::get('/follow/{user}', 'FriendController@follow')->name('follow');
+Route::get('/followers', 'FriendController@followers')->name('followers');
+Route::get('/following', 'FriendController@following')->name('following');
+
 

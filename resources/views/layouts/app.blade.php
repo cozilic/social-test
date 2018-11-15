@@ -34,4 +34,5 @@
     </div>
 
     </body>
-</html>
+    @include('partials.bottom.footer')
+    </html>
